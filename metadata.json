@@ -1,0 +1,6 @@
+{
+  "name": "Fingerprint Reminder",
+  "description": "Work and attendance fingerprint schedule and alarm manager with 18/6 and 24/6 shift support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

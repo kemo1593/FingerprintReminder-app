@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منبه البصمة الذكي | Fingerprint Reminder</title>
+  <meta name="description" content="تطبيق منبه البصمة الذكي - انسَ عناء ضبط المنبهات اليومية أو نسيان بصمة الحضور والانصراف. جدولة تلقائية ذكية تعمل في الخلفية بدون إنترنت.">
+  
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Atmospheric Glows -->
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <img src="logo.svg" alt="شعار منبه البصمة" class="brand-logo">
+        <div class="brand-title" data-ar="منبه البصمة" data-en="Fingerprint Reminder">منبه البصمة</div>
+      </a>
+      <div class="nav-actions">
+        <button id="langToggleBtn" class="lang-btn" onclick="toggleLanguage()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langLabel">English</span>
+        </button>
+        <a href="https://github.com/kemo1593/fingerprint-app/releases/latest/download/app-release.apk" class="btn-nav-download" data-ar="تحميل التطبيق" data-en="Download App">تحميل التطبيق</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+          <span data-ar="الحل الجذري والذكي لتفادي خصومات البصمة" data-en="The Ultimate Solution to Never Miss Your Punch">الحل الجذري والذكي لتفادي خصومات البصمة</span>
+        </div>
+
+        <h1 class="hero-title" data-ar="مشغول في شغلك وسرحت؟ <span>تطبيقنا يفكرك ببصمتك</span> في ميعادها بدقة!" data-en="Busy at work or talking? <span>Our app alerts your fingerprint</span> exactly on time!">
+          مشغول في شغلك وسرحت؟ <span>تطبيقنا يفكرك ببصمتك</span> في ميعادها بدقة!
+        </h1>
+
+        <p class="hero-subtitle" data-ar="كم مرة اندمجت في الشغل، أو انشغلت في مكالمة ونسيت تبصم حضور أو انصراف؟ كم مرة زهقت من تظبيط 4 و 5 منبهات كل يوم وتصحى تلاقيهم راحوا؟ التطبيق يضبط جدولك بالكامل بضغطة واحدة للشهر كله، وينبهك بالصوت والاهتزاز حتى وشاشتك مقفولة!" data-en="How many times did you get busy with work, conversations, or calls and completely forgot your IN or OUT punch? Tired of setting 5 alarms daily? This app schedules your entire month with one click and rings through lock screens!">
+          كم مرة اندمجت في الشغل، أو انشغلت في مكالمة ونسيت تبصم حضور أو انصراف؟ كم مرة زهقت من تظبيط 4 و 5 منبهات كل يوم وتصحى تلاقيهم راحوا؟ التطبيق يضبط جدولك بالكامل بضغطة واحدة للشهر كله، وينبهك بالصوت والاهتزاز حتى وشاشتك مقفولة!
+        </p>
+
+        <div class="cta-group">
+          <!-- Direct download APK from GitHub Releases -->
+          <a href="https://github.com/kemo1593/fingerprint-app/releases/latest/download/app-release.apk" class="btn-primary-download" id="apkDownloadBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+            </svg>
+            <span data-ar="تحميل مباشر للأندرويد (APK)" data-en="Direct Download APK (Android)">تحميل مباشر للأندرويد (APK)</span>
+          </a>
+        </div>
+
+        <div class="download-subtext">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span data-ar="تحميل مجاني مباشر من خوادم GitHub السريعة • بدون إعلانات مزعجة • يدعم نظام أندرويد 7.0 فأحدث" data-en="Direct fast download via GitHub CDN • Zero Ads • Android 7.0+">تحميل مجاني مباشر من خوادم GitHub السريعة • بدون إعلانات مزعجة • يدعم نظام أندرويد 7.0 فأحدث</span>
+        </div>
+      </div>
+
+      <!-- Live Mockup of the App UI with real branding -->
+      <div class="mockup-container">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <!-- App Status Bar -->
+            <div class="mock-status-bar">
+              <span>08:14</span>
+              <span>📶 5G 🔋 98%</span>
+            </div>
+
+            <!-- In-App Header -->
+            <div class="mock-app-header">
+              <div class="mock-header-top">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <img src="logo.svg" style="width:24px;height:24px;border-radius:6px;" alt="icon">
+                  <span class="mock-app-title" data-ar="منبه البصمة" data-en="Fingerprint Reminder">منبه البصمة</span>
+                </div>
+                <span style="font-size:0.75rem;background:rgba(0,245,160,0.2);color:#00F5A0;padding:2px 8px;border-radius:99px;">نظام 8-2</span>
+              </div>
+
+              <!-- Next Upcoming Event Highlight Card -->
+              <div class="mock-next-card">
+                <span class="mock-next-badge" data-ar="البصمة القادمة" data-en="Next Fingerprint">البصمة القادمة</span>
+                <div class="mock-next-title" data-ar="بصمة الحضور (IN)" data-en="Check-in Fingerprint (IN)">بصمة الحضور (IN)</div>
+                <div class="mock-next-time">08:30 ص</div>
+                <div style="font-size:0.72rem;color:#A1B5AF;margin-top:4px;" data-ar="تنبه مسبق قبلها بـ 15 دقيقة 🔔" data-en="Pre-alarm 15 mins before 🔔">تنبه مسبق قبلها بـ 15 دقيقة 🔔</div>
+              </div>
+            </div>
+
+            <!-- In-App Events List -->
+            <div class="mock-body">
+              <div class="mock-event-item active-alarm">
+                <div class="mock-event-details">
+                  <div class="mock-event-icon">IN</div>
+                  <div>
+                    <div style="font-weight:bold;font-size:0.8rem;color:#fff;" data-ar="حضور اليوم" data-en="Today Check-in">حضور اليوم</div>
+                    <div style="font-size:0.7rem;color:#00F5A0;">08:30 ص • جاري التنبيه ⏰</div>
+                  </div>
+                </div>
+                <button class="mock-event-btn" data-ar="تم البصم ✓" data-en="Done ✓">تم البصم ✓</button>
+              </div>
+
+              <div class="mock-event-item">
+                <div class="mock-event-details">
+                  <div class="mock-event-icon" style="background:#00362E;color:#00BFA5;">OUT</div>
+                  <div>
+                    <div style="font-weight:bold;font-size:0.8rem;color:#fff;" data-ar="انصراف اليوم" data-en="Today Check-out">انصراف اليوم</div>
+                    <div style="font-size:0.7rem;color:#8C9E99;">02:30 م • مجدول</div>
+                  </div>
+                </div>
+                <span style="font-size:0.7rem;color:#8C9E99;" data-ar="متبقي 6 س" data-en="In 6h">متبقي 6 س</span>
+              </div>
+
+              <div class="mock-event-item" style="opacity:0.7;">
+                <div class="mock-event-details">
+                  <div class="mock-event-icon" style="background:#1B3D34;color:#00F5A0;">IN</div>
+                  <div>
+                    <div style="font-weight:bold;font-size:0.8rem;color:#fff;" data-ar="حضور الغد" data-en="Tomorrow Check-in">حضور الغد</div>
+                    <div style="font-size:0.7rem;color:#8C9E99;">08:30 ص • مجدول</div>
+                  </div>
+                </div>
+                <span style="font-size:0.7rem;color:#8C9E99;" data-ar="قادم" data-en="Upcoming">قادم</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Comparison Banner -->
+    <section class="pain-banner">
+      <div class="pain-card problem">
+        <span class="pain-tag red" data-ar="المعاناة اليومية" data-en="The Daily Frustration">المعاناة اليومية</span>
+        <h3 class="pain-heading" data-ar="نسيان البصمة = خصومات من مرتبك وتوتر دائم" data-en="Forgotten Punches = Deductions & Anxiety">نسيان البصمة = خصومات من مرتبك وتوتر دائم</h3>
+        <p class="pain-desc" data-ar="أنت في بيئة عملك مركز في شغلك ومكالماتك واجتماعاتك، فجأة الوقت يمر وتكتشف أن ميعاد البصمة فاتك من نص ساعة! أو تقضي كل يوم تدويخ مع تطبيق المنبه وتظبيط 5 منبهات يدوياً وتنسى تفعّلهم أو يقفلوا لما تقفل التطبيق." data-en="You are deeply focused on your work, meetings, or calls. Time flies by and you suddenly realize your punch window passed half an hour ago! Or you waste time configuring 5 alarms manually every single morning.">
+          أنت في بيئة عملك مركز في شغلك ومكالماتك واجتماعاتك، فجأة الوقت يمر وتكتشف أن ميعاد البصمة فاتك من نص ساعة! أو تقضي كل يوم تدويخ مع تطبيق المنبه وتظبيط 5 منبهات يدوياً وتنسى تفعّلهم أو يقفلوا لما تقفل التطبيق.
+        </p>
+      </div>
+
+      <div class="pain-card">
+        <span class="pain-tag green" data-ar="الحل مع تطبيقنا" data-en="The Smart Solution">الحل مع تطبيقنا</span>
+        <h3 class="pain-heading" data-ar="تظبيطة واحدة في ثوانٍ.. وانسى الهم طول الشهر!" data-en="One Setup in Seconds.. Peace of Mind All Month!">تظبيطة واحدة في ثوانٍ.. وانسى الهم طول الشهر!</h3>
+        <p class="pain-desc" data-ar="اختر نظام دوامك (8-2، 10-5، 18-6، شفتات متغيرة)، حدد أيام عملك، والتطبيق يولد كل مواعيد الشهر كاملة. ينبهك قبل ميعاد الحضور بـ 15 دقيقة، وينبهك وقت الانصراف بدقة، ولو مشغول اضغط غفوة (Snooze) وهيفكرك تاني!" data-en="Pick your schedule system (8-2, 10-5, 18-6, or rotating shifts), choose your workdays, and the app calculates the entire schedule. Gives a 15-minute heads-up for IN, alerts at OUT time, with flexible Snooze!">
+          اختر نظام دوامك (8-2، 10-5، 18-6، شفتات متغيرة)، حدد أيام عملك، والتطبيق يولد كل مواعيد الشهر كاملة. ينبهك قبل ميعاد الحضور بـ 15 دقيقة، وينبهك وقت الانصراف بدقة، ولو مشغول اضغط غفوة (Snooze) وهيفكرك تاني!
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+      <div class="section-header">
+        <span class="section-badge" data-ar="مميزات حصرية" data-en="Exclusive Features">مميزات حصرية</span>
+        <h2 class="section-title" data-ar="مصمم خصيصاً ليناسب طبيعة وظيفتك" data-en="Engineered Specially For Your Work Routine">مصمم خصيصاً ليناسب طبيعة وظيفتك</h2>
+        <p class="section-desc" data-ar="ميزات قوية تضمن عدم ضياع أي بصمة حضور أو انصراف تحت أي ظرف" data-en="Built to guarantee you never miss a punch under any circumstance">ميزات قوية تضمن عدم ضياع أي بصمة حضور أو انصراف تحت أي ظرف</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-ar="أنظمة دوام مرنة بالكامل" data-en="Completely Flexible Shift Systems">أنظمة دوام مرنة بالكامل</h3>
+          <p class="feature-desc" data-ar="أنظمة 8-2 و 10-5 ونظام الشفتات 18-6 و 24-6 و 12-12 مع حرية تغيير أوقات الحضور والانصراف كما تحب." data-en="Presets for 8-2, 10-5, 18-6, 24-6, and 12-12 shifts with complete freedom to customize first and last entry times.">أنظمة 8-2 و 10-5 ونظام الشفتات 18-6 و 24-6 و 12-12 مع حرية تغيير أوقات الحضور والانصراف كما تحب.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-ar="منبه قاطع فوق شاشة القفل" data-en="Full-Screen Lock Alarm">منبه قاطع فوق شاشة القفل</h3>
+          <p class="feature-desc" data-ar="حتى لو شاشة الهاتف مغلقة، يظهر المنبه بشاشة كاملة مع صوت مسموع واهتزاز مستمر حتى تؤكد البصم أو تؤجل." data-en="Even if your screen is locked, the alarm awakens the screen with clear audio and vibration until you punch or snooze.">حتى لو شاشة الهاتف مغلقة، يظهر المنبه بشاشة كاملة مع صوت مسموع واهتزاز مستمر حتى تؤكد البصم أو تؤجل.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-ar="مزامنة سحابية مع جوجل" data-en="Cloud Sync with Google">مزامنة سحابية مع جوجل</h3>
+          <p class="feature-desc" data-ar="سجل دخولك بنقرة زر بحساب جوجل أو بريدك، جدولك محفوظ سحابياً في أمان وتقدر تسترجعه على أي هاتف جديد فوراً." data-en="One-tap login with Google or email. Your schedule is synced to the cloud and restored automatically on any new phone.">سجل دخولك بنقرة زر بحساب جوجل أو بريدك، جدولك محفوظ سحابياً في أمان وتقدر تسترجعه على أي هاتف جديد فوراً.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-ar="يعمل بدون إنترنت (Offline)" data-en="100% Offline Compatible">يعمل بدون إنترنت (Offline)</h3>
+          <p class="feature-desc" data-ar="لا يحتاج إلى اتصال إنترنت ليعمل المنبه، كل المواعيد محفوظة محلياً في هاتفك بدقة متناهية." data-en="No internet connection required for alarms. All scheduled alarms run locally through exact system timers.">لا يحتاج إلى اتصال إنترنت ليعمل المنبه، كل المواعيد محفوظة محلياً في هاتفك بدقة متناهية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Card -->
+    <section class="bottom-cta">
+      <h2 data-ar="جاهز تودع نسيان البصمة وخصومات المرتب؟" data-en="Ready to Say Goodbye to Forgotten Punches?">جاهز تودع نسيان البصمة وخصومات المرتب؟</h2>
+      <p data-ar="حمّل تطبيق منبه البصمة الآن مجاناً وابدأ ضبط جدولك لشهر كامل في أقل من 30 ثانية!" data-en="Download Fingerprint Reminder now for free and schedule your entire month in under 30 seconds!">حمّل تطبيق منبه البصمة الآن مجاناً وابدأ ضبط جدولك لشهر كامل في أقل من 30 ثانية!</p>
+      <a href="https://github.com/kemo1593/fingerprint-app/releases/latest/download/app-release.apk" class="btn-primary-download" style="background:#00F5A0;color:#002D26;">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+        </svg>
+        <span data-ar="تحميل مباشر الآن (APK مجاني)" data-en="Direct Download Now (Free APK)">تحميل مباشر الآن (APK مجاني)</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="logo.svg" style="width:26px;height:26px;border-radius:6px;" alt="logo">
+        <span>© 2026 fingerprintreminder.online - جميع الحقوق محفوظة</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/kemo1593/fingerprint-app" target="_blank">GitHub Repository</a>
+        <a href="welcome.html" data-ar="تأكيد البريد" data-en="Confirm Email">تأكيد البريد</a>
+        <a href="reset-password.html" data-ar="استعادة كلمة المرور" data-en="Reset Password">استعادة كلمة المرور</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'ar';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      applyLanguage(currentLang);
+    }
+
+    function applyLanguage(lang) {
+      const isArabic = lang === 'ar';
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.body.classList.toggle('ltr', !isArabic);
+
+      document.getElementById('langLabel').textContent = isArabic ? 'English' : 'عربي';
+
+      // Update all data-ar / data-en attributes
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        const text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+        if (text) {
+          if (text.includes('<span')) {
+            el.innerHTML = text;
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
